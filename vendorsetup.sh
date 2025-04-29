@@ -60,3 +60,8 @@ export OF_STATUS_INDENT_RIGHT=48
 export OF_ALLOW_DISABLE_NAVBAR=0
 export OF_CLOCK_POS=1
 
+# Copy maintainer avatar image
+MAINTAINER_AVATAR="$(gettop)/device/xiaomi/tanzanite/avatar/avatar.png"
+if [ -f "$MAINTAINER_AVATAR" ]; then
+    cp -f ${MAINTAINER_AVATAR} $(gettop)/bootable/recovery/gui/theme/portrait_hdpi/images/Default/About/maintainer.png
+fi
