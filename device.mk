@@ -110,8 +110,3 @@ TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-ndk_platform.so \
 
 TW_LOAD_VENDOR_MODULES := "flashlights-mt6789-o7.ko ft3519t.ko"
-
-# Vendor ramdisk
-PRODUCT_COPY_FILES += \
-     device/xiaomi/tanzanite/fstab.mt6789:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.mt6789
-
