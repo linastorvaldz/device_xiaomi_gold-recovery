@@ -17,16 +17,26 @@
 # Only the below variable(s) need to be changed!
 #
 
-# Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/xiaomi/tanzanite/device.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
+
+# Inherit from duchamp device
+$(call inherit-product, device/xiaomi/tanzanite/device.mk)
+
+# Configure launch_with_vendor_ramdisk.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+
+# Configure emulated_storage.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := tanzanite
 PRODUCT_NAME := twrp_tanzanite
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi Note 14 4G
+PRODUCT_MODEL := Redmi Note 14
 PRODUCT_PLATFORM := mt6789
 PRODUCT_MANUFACTURER := Xiaomi
