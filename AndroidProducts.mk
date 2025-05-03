@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_tanzanite.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_gold.mk
 
-COMMON_LUNCH_CHOICES := twrp_tanzanite-eng
+COMMON_LUNCH_CHOICES := twrp_gold-eng

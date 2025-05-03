@@ -24,8 +24,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
-# Inherit from duchamp device
-$(call inherit-product, device/xiaomi/tanzanite/device.mk)
+# Inherit from gold device
+$(call inherit-product, device/xiaomi/gold/device.mk)
 
 # Configure launch_with_vendor_ramdisk.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
@@ -34,9 +34,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := tanzanite
-PRODUCT_NAME := twrp_tanzanite
+PRODUCT_DEVICE := gold
+PRODUCT_NAME := twrp_gold
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi Note 14
-PRODUCT_PLATFORM := mt6789
+PRODUCT_MODEL := Redmi Note 13 5G
+PRODUCT_PLATFORM := mt6833
 PRODUCT_MANUFACTURER := Xiaomi

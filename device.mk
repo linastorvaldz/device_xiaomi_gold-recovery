@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/xiaomi/tanzanite
+LOCAL_PATH := device/xiaomi/gold
 
 # Hidl Service
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
@@ -77,7 +77,7 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-service    
 
 PRODUCT_PACKAGES := \
-    bootctrl.mt6789 \
+    bootctrl.mt6833 \
     libgptutils \
     libz \
     libcutils \
@@ -122,19 +122,11 @@ PRODUCT_PACKAGES += \
 
 # Additional Target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.keymaster@4.1 \
     android.hardware.vibrator-V1-ndk_platform \
-    android.hardware.graphics.common@1.0 \
     libion \
-    libxml2 \
-    android.hardware.health@2.0-impl-default \
-    android.hardware.boot@1.0
+    libxml2
 
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.keymaster@4.1.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V1-ndk_platform.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.graphics.common@1.0.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.health@2.0-impl-default.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.boot@1.0.so
+    $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so

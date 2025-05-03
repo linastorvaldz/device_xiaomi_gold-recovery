@@ -1,4 +1,4 @@
-DEVICE_PATH := device/xiaomi/tanzanite
+DEVICE_PATH := device/xiaomi/gold
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -33,10 +33,10 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := tanzanite
+TARGET_OTA_ASSERT_DEVICE := gold
 
 # Platform
-PRODUCT_PLATFORM := mt6789
+PRODUCT_PLATFORM := mt6833
 TARGET_BOARD_PLATFORM := $(PRODUCT_PLATFORM)
 
 # MTK Hardware
@@ -167,9 +167,8 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_LPTOOLS := true
 
-# Set brightness path and level
+# Set brightness level
 TW_MAX_BRIGHTNESS := 255
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Excludes
 TW_EXCLUDE_APEX := true
@@ -196,13 +195,15 @@ BOARD_USES_RECOVERY_AS_BOOT :=
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
 BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
-BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := 
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := 
+
+# Kernel Modules
 TW_LOAD_VENDOR_BOOT_MODULES := true
-TW_LOAD_VENDOR_MODULES := "flashlights-mt6789-o7.ko ft3519t.ko"
+TW_LOAD_VENDOR_MODULES := "leds-mt6360.ko ft3683g.ko"
 
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone0/temp"
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone5/temp"
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true

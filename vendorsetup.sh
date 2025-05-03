@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 export LC_ALL="C.UTF-8"
 export ALLOW_MISSING_DEPENDENCIES=true
-export FOX_TARGET_DEVICES="tanzanite"
+export FOX_TARGET_DEVICES="gold"
 export FOX_MAINTAINER_PATCH_VERSION=$(date +"%Y%m%d")
-export FOX_VARIANT="HyperOS"
+export FOX_VARIANT="HyperOS1"
 
 # OFR Build settings
 export FOX_VENDOR_BOOT_RECOVERY=1
@@ -47,8 +47,8 @@ export OF_SUPPORT_VBMETA_AVB2_PATCHING=1
 export OF_DYNAMIC_FULL_SIZE=9126805504
 
 # Flashlight
-export OF_FL_PATH1=/sys/class/leds/flashlight/brightness
-export OF_FL_PATH2=/sys/class/leds/torch-light0/brightness
+export OF_FL_PATH1=/sys/class/leds/mt6360_flash_ch1/brightness
+export OF_FL_PATH2=/sys/class/leds/mt6360_flash_ch2/brightness
 
 # OFR GUI Settings
 export OF_SCREEN_H=2400
@@ -59,7 +59,7 @@ export OF_ALLOW_DISABLE_NAVBAR=0
 export OF_CLOCK_POS=1
 
 # Copy maintainer avatar image
-MAINTAINER_AVATAR="$(gettop)/device/xiaomi/tanzanite/avatar/avatar.png"
+MAINTAINER_AVATAR="$(gettop)/device/xiaomi/gold/avatar/avatar.png"
 if [ -f "$MAINTAINER_AVATAR" ]; then
     cp -f ${MAINTAINER_AVATAR} $(gettop)/bootable/recovery/gui/theme/portrait_hdpi/images/Default/About/maintainer.png
 fi
