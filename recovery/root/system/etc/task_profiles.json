@@ -693,19 +693,6 @@
     },
     // MIUI ADD: Performance_MemoryEnhance
     {
-      "Name": "MemoryProtectedProcess",
-      "Actions": [
-        {
-          "Name": "JoinCgroup",
-          "Params":
-          {
-            "Controller": "memory",
-            "Path": "protected-app"
-          }
-        }
-      ]
-    },
-    {
       "Name": "MemoryFreezeProcess",
       "Actions": [
         {
